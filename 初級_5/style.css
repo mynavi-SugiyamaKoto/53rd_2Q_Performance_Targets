@@ -1,0 +1,333 @@
+@charset "utf-8";
+
+* {
+    margin: 0 auto;
+    padding: auto;
+}
+
+body {
+    color: #333;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.75rem;
+    background-color: #E6E2D7;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    writing-mode: vertical-rl;
+}
+
+img {
+    max-width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+dl, p, span{
+    writing-mode: vertical-rl;
+}
+
+section{
+    display: flex;
+    max-width: 1024px;
+    padding: 0px 2%;
+    margin-bottom: 184px;
+}
+
+h2{
+    margin: 0px;
+}
+
+section h2 span{
+    font-weight: normal;
+}
+
+section h2 span:first-child{
+    font-size: 2.25rem;
+    letter-spacing: 10px;
+    padding-bottom: 22px;
+}
+
+/* header */
+
+header{
+    height: 100vh;
+    background-image: url(img/mainvisual-pc.jpg);
+    background-size: cover;
+    background-position: center top;
+    padding: 60px 80px;
+    margin-bottom: 180px;
+    position: relative;
+}
+
+header a{
+    color: white;
+    margin: 0px;
+}
+
+.header-flex{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0px;
+}
+
+header ul{
+    display: flex;
+    
+}
+
+.header-nav h1{
+    padding-left: 60px;
+}
+
+.header-nav li{
+    padding-left: 25px;
+}
+
+.header-online{
+    position: absolute;
+    top: 60%;
+    left: 6%;
+}
+
+.header-online a{
+    background-color: rgb(81, 81, 81);
+    width: 68px;
+    height: 257px;
+    display: flex;/*テキストを真ん中にするためにflexを使用*/
+    justify-content: center;
+    align-items: center;
+    outline: 1px solid rgb(255, 255, 255);/*outlineでドットの線を追加*/
+    outline-offset: -10px;/*outline-offsetの値を-15pxにして内側に調整*/
+
+}
+
+#news{
+    margin-bottom: 184px;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+#news h2{
+    margin: 0px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+#news dl{
+    margin: 0px;
+    padding: 80px 100px 0 0;
+}
+
+#news dl dt{
+    padding: 20px 20px 20px 2px;
+    border-right: solid 1px #333;
+}
+
+#news dl dd{
+    padding: 20px 2px 20px 20px;
+}
+
+#news dl dd:last-child{
+    border-left: solid 1px #333;
+}
+
+#contents-1{
+    flex-direction: row-reverse;
+}
+
+#contents-1 h2{
+    padding-left: 20px;
+}
+
+#contents-1 p, #contents-2 p{
+    position: relative;
+    writing-mode: horizontal-tb;
+    padding: 50px 0px;
+    margin: 0px;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+#contents-1 p{
+    background-color: #F9E90699;
+    width: 30%;
+    top: -120px;
+    left: 32%;
+}
+
+#contents-1 h2 span, #contents-2 h2 span{
+    display: block;
+}
+
+.contents-img{
+    width: 65%;
+}
+
+#contents-1 img, #contents-2 img{
+    max-width: 100%;
+    object-fit: cover;
+    margin-top: 200px;
+}
+
+#contents-1 div{
+    margin: 0px 0px 0px auto;
+}
+
+#contents-2 h2{
+    padding-right: 20px;
+}
+
+#contents-2 p{
+    background-color: #952A2699;
+    width: 30%;
+    top: -120px;
+    left: 38%;
+}
+
+#contents-2 div{
+    margin: 0px;
+}
+
+#map{
+    max-width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+#map iframe{
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+footer{
+    background-color: #000;
+}
+
+.footer-flex{
+    display: flex;
+    padding: 80px 2%;
+    justify-content: space-between;;
+}
+
+.footer-about{
+    display: flex;
+    margin: 0px;
+}
+
+.footer-about p{
+    padding: 0px 60px;
+}
+
+.footer-about nav li{
+    padding: 0px 10px;
+}
+
+footer p, footer p, footer a{
+    color: white;
+}
+
+footer ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-contact{
+    margin: 0px;
+}
+
+
+.footer-contact a{
+    display: block;
+    padding: 10px 0px;
+}
+
+.footer-contact a:first-child{
+    border-bottom: solid 1px white;
+}
+
+.footer-text{
+    display: block;
+    font-size: 0.86rem;
+    writing-mode: horizontal-tb;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px){
+    section{
+        max-width: 100%;
+    }
+
+    header{
+        background-image: url(img/mainvisual-sp.jpg);
+        padding: 20px;
+        margin-bottom: 80px;
+    }
+
+    .contents-img{
+        width: 94%;
+    }
+
+    #contents-1 p{
+    width: 38%;
+    left: -4%;
+    overflow: hidden;
+    }
+
+    #contents-2 p{
+        width: 36%;
+        left: 66%;
+        overflow: hidden;
+    }
+    
+    #contents-1 img, #contents-2 img{
+        margin-top: 100px;
+    }
+    
+    #contents-1 h2 span:last-child, #contents-2 h2 span:last-child {
+        display: none;
+    }
+
+    #contents-2{
+        margin-bottom: 20px;
+    }
+
+    #contents-1 h2 span, #contents-2 h2 span{
+        display: block;
+        font-size: 1.84rem;
+    }
+
+    .footer-flex{
+        padding: 30px 2%;
+    }
+
+
+    .footer-about p{
+        padding: 0px 20px;
+    }
+
+    .footer-about nav li{
+        padding: 0px 6px;
+    }
+
+    .footer-text{
+        font-size: 0.66rem;
+    }
+    
+
+    }

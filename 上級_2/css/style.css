@@ -1,0 +1,362 @@
+@charset "utf-8";
+
+* {
+    margin: 0 auto;
+    padding: auto;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+    color: #333;
+    font-family: 游ゴシック体, YuGothic, "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック, "Yu Gothic", メイリオ, sans-serif;
+    font-size: 0.75rem;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+ul{
+    padding: 0px;
+}
+
+section{
+    margin-bottom: 80px;
+}
+
+h2{
+    font-size: 2.2rem;
+    display: inline-block;
+    margin-top: 160px;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.regulation{
+    max-width: 1200px;
+    padding: 0px 16px;
+}
+
+/* ハンバーガーメニュー開始 */
+
+/* 
+hamburger(ハンバーガーアイコン)
+=================================== */
+.hamburger {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 300;
+  }
+  
+  .hamburger__line {
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    right: 0;
+    background-color: #000;
+    transition: all 0.5s;
+  }
+  
+  .hamburger__line--1 {
+    top: 5px;
+  }
+  
+  .hamburger__line--2 {
+    top: 18px;
+  }
+  
+  .hamburger__line--3 {
+    top: 32px;
+  }
+  
+  /*ハンバーガーがクリックされたら*/
+
+  .open .hamburger__line{
+    background-color: white;
+    transition: all 0.5s;
+  }
+
+  .open .hamburger__line--1 {
+    transform: translateY(10px) rotate(-315deg);
+    top: 11px;
+    right: 2px;
+  }
+  
+  .open .hamburger__line--2 {
+    opacity: 0;
+  }
+  
+  .open .hamburger__line--3 {
+    transform: translateY(10px) rotate(315deg);
+    top: 11px;
+    right: 2px;
+  }
+
+  
+  /* 
+  sp-nav(ナビ)
+  =================================== */
+  .sp-nav {
+    position: fixed;
+    left: -100%; /*ハンバーガーがクリックされる前はWindow右側に隠す*/
+    top: 0;
+    width: 40%; /* 出てくるスライドメニューの幅 */
+    height: 100vh;
+    background-color: #000;
+    transition: all 0.5s;
+    z-index: 200;
+    overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+  }
+  
+  /*ハンバーガーがクリックされたら右からスライド*/
+  .open .sp-nav {
+    left: 0;
+  }
+  
+  
+  /* 
+  black-bg(ハンバーガーメニュー解除用bg)
+  =================================== */
+  .black-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+    cursor: pointer;
+    z-index: 100;
+  }
+  
+  /*ハンバーガーメニューが開いたら表示*/
+  .open .black-bg {
+    opacity: 0.3;
+    visibility: visible;
+  }
+
+  /* ハンバーガーメニュー終了 */
+
+  header{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    background-color: white;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .sp-nav ul li a{
+    color: white;
+  }
+
+  .sp-nav ul{
+    margin-top: 50px;
+  }
+
+  .sp-nav_1 li{
+    padding: 14px 0px;
+    border-top: 1px solid white;
+    margin: 0px 10%;
+    font-size: 1rem;
+  }
+
+  .sp-nav_1 li:last-child{
+    border-bottom: 1px solid white;
+  }
+
+  .sp-nav_2 li{
+    padding: 8px 0px;
+    margin: 0px 10%;
+    font-size: 0.8rem;
+  }
+
+  header h1{
+    margin: 0px 0px 0px 20px;
+  }
+
+/* video */
+
+video{
+    height: auto;
+    max-width: 100%;
+    padding-top: 100px;
+    z-index: 10;
+  }
+
+/* pickup */
+
+#pickup{
+  max-width: 100%;
+}
+
+.pickup-slide div{
+  margin: 0px 8px;
+}
+  
+.slick-list.draggable{
+  margin: 0px;
+}
+
+/* feature */
+
+#feature{
+  max-width: 100%;
+}
+
+.feature-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.feature-grid_items{
+  filter: drop-shadow(0px 0px 4px rgba(0,0,0,0.29));
+}
+
+.feature-grid_text{
+  background-color: white;
+  padding: 32px;
+  margin-top: -6px;
+}
+
+.feature-grid_category{
+  padding-bottom: 24px;
+  font-size: 0.8rem;
+}
+
+.feature-grid_maintext{
+  padding-bottom: 40px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.feature-grid_date{
+  text-align: right;
+  font-size: 0.7rem;
+}
+
+/* footer */
+footer{
+  background-color: #121212;
+  color: white;
+}
+
+footer h2{
+  padding-top: 60px;
+}
+
+.footer-flex{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 60px;
+  width: 100%;
+}
+
+.footer-text_inner{
+  margin: 0px;
+  width: 46%;
+}
+
+.footer-text_form{
+  margin: 0px;
+  width: 46%;
+}
+
+.footer-text_form a{
+  padding: 16px 80px;
+  color: white;
+  border: white 1px solid;
+  margin-top: 10px;
+  display: inline-block;
+  transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.footer-text_form a:hover{
+  background-color: white;
+  color: #121212;
+}
+
+.footer-text_form input, .footer-text_form textarea{
+  width: 100%;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.footer-name{
+  text-align: center;
+  padding-bottom: 12px;
+}
+
+@media screen and (max-width: 983px){
+  .feature-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 657px){
+  .sp-nav{
+    width: 80%;
+  }
+  
+  video{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  .feature-grid{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .footer-flex{
+    flex-direction: column;
+  }
+
+  .footer-text_inner{
+    width: 100%;
+    margin-bottom: 22px;
+  }
+  
+  .footer-text_form{
+    width: 100%;
+  }
+
+  .footer-text_form a{
+    width: 100%;
+    text-align: center;
+  }
+}
+

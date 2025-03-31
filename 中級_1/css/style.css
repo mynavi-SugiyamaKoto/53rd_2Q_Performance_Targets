@@ -1,0 +1,425 @@
+@charset "utf-8";
+
+* {
+    margin: 0 auto;
+    padding: auto;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+    color: #333;
+    font-family: 游ゴシック体, YuGothic, "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック, "Yu Gothic", メイリオ, sans-serif;
+    font-size: 0.75rem;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+ul{
+    padding: 0px;
+}
+
+section{
+    margin-bottom: 80px;
+}
+
+h2{
+    font-size: 2.2rem;
+    position: relative;
+    display: inline-block;
+    margin-top: 200px;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+h2:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -20px;/*線の上下位置*/
+    display: inline-block;
+    width: 160px;/*線の長さ*/
+    height: 2px;/*線の太さ*/
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);/*位置調整*/
+    background-color: black;/*線の色*/
+    border-radius: 2px;/*線の丸み*/
+  }
+
+.regulation{
+    max-width: 1360px;
+    padding: 0px 16px;
+    margin: 0px auto;
+}
+
+/* 
+hamburger(ハンバーガーアイコン)
+=================================== */
+.hamburger {
+    position: relative;
+    right: 0px;
+    top: 0px;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 300;
+    margin: 0px;
+  }
+  
+  .hamburger__line {
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    right: 0;
+    background-color: #000;
+    transition: all 0.5s;
+  }
+  
+  .hamburger__line--1 {
+    top: 20px;
+  }
+  
+  .hamburger__line--3 {
+    top: 28px;
+  }
+  
+  /*ハンバーガーがクリックされたら*/
+  .open .hamburger__line--1 {
+    transform: rotate(-45deg);
+    top: 20px;
+    background-color: #fff;
+  }
+
+  .open .hamburger__line--3 {
+    transform: rotate(45deg);
+    top: 20px;
+    background-color: #fff;
+  }
+  
+  /* 
+  sp-nav(ナビ)
+  =================================== */
+  .sp-nav {
+    position: fixed;
+    top: 0;
+    left: -200px;
+    transition: all 0.5s;
+    opacity: 0;
+    z-index: 0;
+    overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+  }
+  
+  /*ハンバーガーがクリックされたら右からスライド*/
+  .open .sp-nav {
+    left: 0;
+    opacity: 1;
+    z-index: 200;
+  }
+  
+  
+  /* 
+  black-bg(ハンバーガーメニュー解除用bg)
+  =================================== */
+  .black-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+    cursor: pointer;
+    z-index: 150;
+  }
+
+  .nav-wrapper{
+    margin: 0px;
+  }
+  
+  /*ハンバーガーメニューが開いたら表示*/
+  .open .black-bg {
+    opacity: 0.7;
+    visibility: visible;
+  }
+
+  .sp-nav ul li a{
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  .sp-nav ul li{
+    padding-bottom: 20px;
+  }
+
+  .sp-nav ul{
+    margin: 30px;
+  }
+
+/* header */
+header{
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+header .header-h1{
+    margin: 0px;
+}
+
+/* main */
+
+main{
+    display: block;
+    z-index: 100;
+}
+
+#main-pd{
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 40px;
+    margin-bottom: 40px;
+}
+
+.main-pd_item{
+    max-width: 100%;
+    margin: 0px;
+    transition: all 0.5s;
+}
+
+.main-pd_item img{
+    width: 100%;
+}
+.main-pd_item a{
+    opacity: 1;
+}
+
+
+main .main-pd_view{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+main a{
+    transition: all 0.5s;
+}
+
+main a:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+/* footer */
+
+footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+footer.regulation{
+    margin-bottom: 24px;
+}
+
+footer ul{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+}
+
+footer ul li{
+    padding: 0px 20px 0px 0px;
+}
+
+footer a{
+    margin: 0px;
+}
+
+/* product_1 */
+main .main-pd_count{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+main .main-pd_count p{
+    margin: 0px;
+}
+
+main .main-pd_count p:first-child{
+    padding-right: 30px;
+}
+
+/* about */
+.main-about{
+    padding-top: 120px;
+    margin-bottom: 100px;
+}
+
+h3{
+    font-weight: normal;
+    font-size: 1rem;
+    padding-bottom: 20px;
+}
+.main-about_text{
+    max-width: 582px;
+    margin: 0px;
+}
+
+.main-about_text p:first-child{
+    padding-bottom: 20px;
+}
+
+/* company */
+
+.main-company{
+    max-width: 600px;
+    margin: 0px 0px 100px 0px;
+    padding-top: 120px;
+}
+
+.main-company dl{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.main-company dl dt{
+    width: 30%;
+    padding: 20px 0px;
+}
+
+.main-company dl dd{
+    width: 70%;
+    padding: 20px 0px;
+}
+
+.main-company dl dd:not(:last-of-type){
+    border-bottom: #e2e2e2 1px solid;
+}
+
+.main-company dl dt:not(:last-of-type){
+    border-bottom: #e2e2e2 1px solid;
+}
+
+iframe{
+    filter: grayscale(100%);
+}
+
+/* item */
+
+.main-item{
+    padding-top: 120px;
+    margin-bottom: 100px;
+}
+
+.main-item img{
+    max-width: 400px;
+    margin: 0px 40px 0px 0px;
+}
+
+.main-item_text{
+    max-width: 330px;
+    margin: 0px;
+}
+
+.main-item_text p{
+    padding-bottom: 20px;
+}
+
+.main-item_flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+}
+
+.main-item_flex dl{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.main-item_flex dd{
+    width: 70%;
+}
+
+.main-item_flex dt{
+    width: 30%;
+}
+
+.main-item_back{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+@media screen and (max-width: 600px) {
+    header .header-h1{
+        font-size: 1.5rem;
+    }
+    .main-pd_item{
+        max-width: 100%;
+        margin: 0px;
+        transition: all 0.5s;
+        padding-bottom: 20px;
+    }
+
+    .main-item_flex{
+        flex-direction: column;
+    }
+
+    .main-item img{
+        max-width: 100%;
+        margin: 0px 0px 20px 0px;
+    }
+
+    .main-item_text{
+        max-width: 100%;
+        margin: 0px;
+    }
+
+    #main-pd{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    
+}

@@ -18,4 +18,4 @@
 - JavaScriptでclassに付随するclassを追加する方法
 - gridの使い方
 - ハンバーガーメニューの動作について
-　- transform: rotate();の使用方法
+  - transform: rotate();の使用方法

@@ -1,18 +1,12 @@
-$(function(){
-    $(".btn-gnavi").on("click", function(){
-        // ハンバーガーメニューの位置を設定
-        var rightVal = 0;
-        if($(this).hasClass("open")) {
-            // 位置を移動させメニューを開いた状態にする
-            rightVal = -300;
-            // メニューを開いたら次回クリック時は閉じた状態になるよう設定
-            $(this).removeClass("open");
-        } else {
-            // メニューを開いたら次回クリック時は閉じた状態になるよう設定
-            $(this).addClass("open");
-        }
-        $("#global-navi").stop().animate({
-            right: rightVal
-        }, 200);
+window.onload = function () {
+    var nav = document.getElementById('nav-wrapper');
+    var hamburger = document.getElementById('js-hamburger');
+    var blackBg = document.getElementById('js-black-bg');
+
+    hamburger.addEventListener('click', function () {
+        nav.classList.toggle('open');
     });
-});
+    blackBg.addEventListener('click', function () {
+        nav.classList.remove('open');
+    });
+};

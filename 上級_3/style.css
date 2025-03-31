@@ -102,6 +102,13 @@ header button{
     display: none;
 }
 
+.nav-sp{
+    display: none;
+}
+.sp-nav{
+    display: none;
+}
+
 
 /* main */
 
@@ -434,169 +441,136 @@ footer .footer-topgo span{
     header{
         padding: 30px 30px;
         width: auto;
-        position: relative;
+        position: fixed;
         background-color: white;
-    }
-
-    header nav{
-        display: none;
-    }
-
-    #overlay-menu{
-        display: block;
-    }
-
-    header button{
-        display: block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        z-index: 100;
     }
 
     .header-title{
-        margin-bottom: 0px;
+        margin: 0px;
     }
 
-    .header-fixd{
-        position: fixed;
-        width: 100%;
-        z-index: 100;
+    header nav.nav-pc{
+        display: none;
     }
-
-
-    .hamburger {
-        position: fixed;
-        top: 40px;
-        right: 20px;
-        z-index: 100;
-        width: 48px;
-        height: 48px;
-        border: none;
-        background: transparent;
-        cursor: pointer;
-    }
-      
-    .hamburger__line {
-        position: absolute;
-        left: 11px;
-        width: 26px;
-        height: 2px;
-        background-color: #333;
-        transition: all .4s;
-    }
-
-    .hamburger__line:nth-of-type(1) {
-        top: 14px;
-    }
-    .hamburger__line:nth-of-type(2) {
-        top: 23px;
-      }
-    .hamburger__line:nth-of-type(3) {
-        top: 32px;
-      }
 
     .main-contener{
         margin-left: 0px;
     }
 
-    /* overlay-styles.css */
-    .hamburger-overlay {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
-        width: 48px;
-        height: 48px;
-        border: none;
-        background: transparent;
-        cursor: pointer;
-    }
-    
-    .hamburger-overlay__line {
-        position: absolute;
-        left: 11px;
-        width: 26px;
-        height: 2px;
-        background-color: #333;
-        transition: all .6s;
-    }
-    
-    .hamburger-overlay__line:nth-of-type(1) { top: 14px; }
-    .hamburger-overlay__line:nth-of-type(2) { top: 23px; }
-    .hamburger-overlay__line:nth-of-type(3) { top: 32px; }
 
-    .hamburger-overlay.active .hamburger-overlay__line {
-        background-color: #fff;
-    }
-      
-    .hamburger-overlay.active .hamburger-overlay__line:nth-of-type(1) {
-        transform: translateY(9px) rotate(-45deg);
-    }
-    .hamburger-overlay.active .hamburger-overlay__line:nth-of-type(2) {
-        opacity: 0;
-    }
-    .hamburger-overlay.active .hamburger-overlay__line:nth-of-type(3) {
-        transform: translateY(-9px) rotate(45deg);
-    }
-      
-    .nav-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.95);
-        visibility: hidden;
-        opacity: 0;
-        transition: all .6s;
-        z-index: 900;
-    }
-      
-    .nav-overlay.active {
-        visibility: visible;
-        opacity: 1;
-    }
-      
-    .nav-overlay__content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        text-align: center;
-    }
-      
-    .nav-overlay__list {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-      
-    .nav-overlay__item {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all .6s;
-    }
-      
-    .nav-overlay.active .nav-overlay__item {
-        opacity: 1;
-        transform: translateY(0);
-    }
-      
-    .nav-overlay.active .nav-overlay__item:nth-child(1) { transition-delay: 0.1s; }
-    .nav-overlay.active .nav-overlay__item:nth-child(2) { transition-delay: 0.2s; }
-    .nav-overlay.active .nav-overlay__item:nth-child(3) { transition-delay: 0.3s; }
-    .nav-overlay.active .nav-overlay__item:nth-child(4) { transition-delay: 0.4s; }
-      
-    .nav-overlay__link {
-        display: inline-block;
-        padding: 20px;
-        color: #fff;
-        font-size: 24px;
-        text-decoration: none;
-        transition: color .3s;
-    }
-      
-    .nav-overlay__link:hover {
-        color: #4a90e2;
-    }
+ /* spnav */
+
+.sp-nav{
+    display: block;
+}
+.nav-sp{
+    display: block;
+    margin: 0px;
+}
+
+/* 
+hamburger(ハンバーガーアイコン)
+=================================== */
+.hamburger {
+    position: relative;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 300;
+    right: 60px;
+  }
+  
+  .hamburger__line {
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    right: 0;
+    background-color: #000;
+    transition: all 0.5s;
+  }
+  
+  .hamburger__line--1 {
+    top: 1px;
+  }
+  
+  .hamburger__line--2 {
+    top: 18px;
+  }
+  
+  .hamburger__line--3 {
+    top: 36px;
+  }
+  
+  /*ハンバーガーがクリックされたら*/
+  .open .hamburger__line--1 {
+    transform: rotate(-45deg);
+    top: 11px;
+  }
+  
+  .open .hamburger__line--2 {
+    opacity: 0;
+  }
+  
+  .open .hamburger__line--3 {
+    transform: rotate(45deg);
+    top: 11px;
+  }
+  
+  /* 
+  sp-nav(ナビ)
+  =================================== */
+  .sp-nav {
+    position: fixed;
+    left: -100%; /*ハンバーガーがクリックされる前はWindow右側に隠す*/
+    top: 0;
+    width: 50%; /* 出てくるスライドメニューの幅 */
+    height: 100vh;
+    background-color: #fff;
+    transition: all 0.5s;
+    z-index: 200;
+    overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+  }
+  
+  /*ハンバーガーがクリックされたら右からスライド*/
+  .open .sp-nav {
+    left: 0;
+    padding: 50px;
+  }
+  
+  
+  /* 
+  black-bg(ハンバーガーメニュー解除用bg)
+  =================================== */
+  .black-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+    cursor: pointer;
+    z-index: 100;
+  }
+  
+  /*ハンバーガーメニューが開いたら表示*/
+  .open .black-bg {
+    opacity: 0.3;
+    visibility: visible;
+  }
+
+/* --- */
 
     h2::before{
         margin-right: 2rem;
@@ -607,7 +581,7 @@ footer .footer-topgo span{
     }
 
     #video{
-        height: 80vh;
+        height: 50vh;
     }
 
     #video video{

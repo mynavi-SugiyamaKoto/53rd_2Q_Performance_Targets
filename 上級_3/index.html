@@ -11,28 +11,29 @@
     <div class="all">
 
         <!-- header -->
-         <div class="header-fixd">
+        <div class="header-fixd">
             <header>
                 <h1 class="header-title">
                     <img src="img/logo.svg" alt="logo">
                 </h1>
-                <button class="hamburger" aria-label="メニュー" aria-controls="nav-menu" aria-expanded="false">
-                    <span class="hamburger__line"></span>
-                    <span class="hamburger__line"></span>
-                    <span class="hamburger__line"></span>
-                </button>
-                <nav id="overlay-menu" class="nav-overlay" aria-hidden="true">
-                    <div class="nav-overlay__content">
-                    <ul class="nav-overlay__list">
-                        <li class="nav-overlay__item"><a href="#" class="nav-overlay__link">私たちについて</a></li>
-                        <li class="nav-overlay__item"><a href="#" class="nav-overlay__link">サービス</a></li>
-                        <li class="nav-overlay__item"><a href="#" class="nav-overlay__link">商品情報</a></li>
-                        <li class="nav-overlay__item"><a href="#" class="nav-overlay__link">展示会</a></li>
-                        <li class="nav-overlay__item"><a href="#" class="nav-overlay__link">暮らしの日記</a></li>
-                        <li class="nav-overlay__item"><a href="#" class="nav-overlay__link">会社概要</a></li>
-                    </ul>
+                <div id="nav-wrapper" class="nav-wrapper nav-sp">
+                    <div class="hamburger" id="js-hamburger">
+                      <span class="hamburger__line hamburger__line--1"></span>
+                      <span class="hamburger__line hamburger__line--2"></span>
+                      <span class="hamburger__line hamburger__line--3"></span>
                     </div>
-                </nav>
+                    <nav class="sp-nav">
+                      <ul>
+                        <li><a href="#">私たちについて</a></li>
+                        <li><a href="#">サービス</a></li>
+                        <li><a href="#">商品情報</a></li>
+                        <li><a href="#">展示会</a></li>
+                        <li><a href="#">暮らしの日記</a></li>
+                        <li><a href="#">会社概要</a></li>
+                      </ul>
+                    </nav>
+                    <div class="black-bg" id="js-black-bg"></div>
+                   </div>
                 <nav class="nav-pc">
                     <ul>
                         <li><a href="#">私たちについて</a></li>
